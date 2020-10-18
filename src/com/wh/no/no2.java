@@ -5,6 +5,7 @@ package com.wh.no;
  * @author wanghao
  * @date 2020/10/18 0018 21:34
  * @discriptiong 2. 两数相加
+ * @url         https://leetcode-cn.com/problems/add-two-numbers/
  */
 public class no2 {
     public static  void  main(String args[]){
@@ -62,7 +63,53 @@ public class no2 {
  * }
  */
 class Solution {
+    /**
+     *  正确思路
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        ListNode start= new ListNode(0);
+        ListNode rear = start;
+        int lastInt = 0;
+        while (l1 != null || l2 != null || lastInt > 0){
+            ListNode tmp;
+            int count = 0;
+            if (l1 == null && l2 != null) {
+                count = l2.val + lastInt;
+                l2 = l2.next;
+            }           else if (l1 != null && l2 == null) {
+                count = l1.val + lastInt;
+                l1 = l1.next;
+            }            else if (l1 != null && l2 != null) {
+                count = l1.val + l2.val + lastInt;
+                l2 = l2.next;
+                l1 = l1.next;
+            }            else if (l1 == null && l2 == null) {
+                count =  lastInt;
+            }
+            if(count >= 10){
+                count = count - 10;
+                lastInt = 1;
+            }   else {
+                lastInt = 0;
+            }
+            tmp = new ListNode(count);
+            rear.next = tmp;
+            rear = tmp;
+        }
+        return  start.next;
+    }
+
+    /**
+     * 错误思路，只能处理int类型的
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
         int num1 = 0;
         int num2 = 0;
         int count = 0;
