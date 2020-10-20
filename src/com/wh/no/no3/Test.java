@@ -7,6 +7,7 @@ package com.wh.no.no3;
  */
 public class Test{
     public  static  void  main(String  args[]){
+
         Solution solution = new Solution();
         System.out.println(Integer.toString(solution.lengthOfLongestSubstring("abcabcbb")));
         boolean[] test = new  boolean[10];
@@ -20,6 +21,9 @@ public class Test{
         }
         System.out.println((int)'c');
         System.out.println((int)'d');
+
+        System.out.println(Integer.toString((int)'2' - (int)'0'));
+
     }
 
 }
