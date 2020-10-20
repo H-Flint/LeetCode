@@ -1,4 +1,4 @@
-package com.wh.no;
+package com.wh.no.no2;
 
 /**
  * @author wanghao
