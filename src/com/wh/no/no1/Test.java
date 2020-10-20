@@ -6,7 +6,15 @@ package com.wh.no.no1;
  * @discription
  */
 public class Test {
-    public int[] twoSum(int[] nums, int target) {
-        for(int )
+    public static  void  main(String args[]){
+        int[] test = {2, 7, 11, 15};
+        Solution solution = new Solution();
+        int[] res = solution.twoSum(test, 9);
+        System.out.println(Integer.toString(res[0]) + "-- " + Integer.toString(res[1]));
+
+        int[] test1 = {3, 2, 4};
+        solution = new Solution();
+        res = solution.twoSum(test1, 6);
+        System.out.println(Integer.toString(res[0]) + "-- " + Integer.toString(res[1]));
     }
 }
