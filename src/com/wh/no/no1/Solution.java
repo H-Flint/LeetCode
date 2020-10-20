@@ -15,7 +15,7 @@ public class Solution {
         }
         numsString += ",";
         for (int i = 0; i < nums.length; i++){
-            String tmp = "," + Integer.toString(target - nums[i]);
+            String tmp = "," + Integer.toString(target - nums[i]) + ",";
             int firstFind =  numsString.indexOf(tmp);
             if(firstFind != -1){
                 int last;
